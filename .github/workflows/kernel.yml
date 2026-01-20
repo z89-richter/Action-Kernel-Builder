@@ -77,7 +77,7 @@ jobs:
         swap-size-gb: 16
       continue-on-error: true
     
-    - name: Clone Kernel Tree & Clang (Wild KSU)
+    - name: Clone Kernel Tree & Clang
       run: |
         cd ${GITHUB_WORKSPACE}
         git clone -b ${{ matrix.branch }} --recursive https://github.com/archer0305/kernel_samsung_sm8550-common.git common

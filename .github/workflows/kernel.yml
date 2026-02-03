@@ -121,7 +121,7 @@ jobs:
     - name: Packing Zip
       run: |
         cd ${GITHUB_WORKSPACE}/AnyKernel3
-        7z a $KERNEL_VERSION-${{ matrix.branch }}.zip *
+        7z a $KERNEL_VERSION.zip *
       continue-on-error: true
   
     - name: Publish to GitHub
@@ -134,7 +134,7 @@ jobs:
         name: Release Kernel
         tag_name: ${{ github.run_id }}
         body: |
-          ChangeLog : Nothing
+          ChangeLog :
       env:
         GITHUB_TOKEN: ${{ secrets.TEST }}
       continue-on-error: true   

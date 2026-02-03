@@ -74,7 +74,7 @@ jobs:
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
-        swap-size-gb: 16
+        swap-size-gb: 8
       continue-on-error: true
     
     - name: Clone Kernel Tree & Clang

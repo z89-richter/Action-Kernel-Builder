@@ -68,7 +68,7 @@ jobs:
     
     - name: Clone AnyKernel3
       run: |
-        git clone https://github.com/archer0305/AnyKernel3.git AnyKernel3
+        git clone https://github.com/z89-richter/AnyKernel3.git AnyKernel3
       continue-on-error: true
 
     - name: Set Swap Space
@@ -80,7 +80,7 @@ jobs:
     - name: Clone Kernel Tree & Clang
       run: |
         cd ${GITHUB_WORKSPACE}
-        git clone -b ${{ matrix.branch }} --recursive https://github.com/archer0305/kernel_samsung_sm8550-common.git common
+        git clone -b ${{ matrix.branch }} --recursive https://github.com/z89-richter/kernel_samsung_sm8550-common.git common
         cp -f clang.sh ${GITHUB_WORKSPACE}/common
         cd ${GITHUB_WORKSPACE}/common
         chmod +x clang.sh

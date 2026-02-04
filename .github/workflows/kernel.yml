@@ -121,7 +121,7 @@ jobs:
     - name: Packing Zip
       run: |
         cd ${GITHUB_WORKSPACE}/AnyKernel3
-        7z a $KERNEL_VERSION.zip *
+        7z a $KERNEL_VERSION-KowSU.zip *
       continue-on-error: true
   
     - name: Publish to GitHub

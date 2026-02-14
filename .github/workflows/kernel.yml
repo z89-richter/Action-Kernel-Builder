@@ -90,6 +90,8 @@ jobs:
     - name: Building Kernel
       run: |
         cd ${GITHUB_WORKSPACE}/common
+        export KBUILD_BUILD_USER="z89"
+        export KBUILD_BUILD_HOST="richter"
         export USE_CCACHE=1
         export CCACHE_EXEC=/usr/bin/ccache
         ccache --max-size=50G

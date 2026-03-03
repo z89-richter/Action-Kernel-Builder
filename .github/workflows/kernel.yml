@@ -2,6 +2,18 @@ name: Build Kernel
 
 on:
   workflow_dispatch:
+    inputs:
+      KERNELSU_BRANCH:
+        description: 'KERNELSU_BRANCH'
+        required: true
+        default: ''
+        type: choice
+        options:
+        -
+        - s dev
+        - s stable
+        - s legacy
+        - s v3.0.0
   
 jobs:
   build:
@@ -83,7 +95,7 @@ jobs:
         git clone -b ${{ matrix.branch }} --recursive https://github.com/z89-richter/kernel_samsung_sm8550-common.git common
         cp -f clang.sh ${GITHUB_WORKSPACE}/common
         cd ${GITHUB_WORKSPACE}/common
-        curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s dev
+        curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -${{ github.event.inputs.KERNELSU_BRANCH }}
         chmod +x clang.sh
         ./clang.sh
       continue-on-error: true        

@@ -83,6 +83,7 @@ jobs:
         git clone -b ${{ matrix.branch }} --recursive https://github.com/z89-richter/kernel_samsung_sm8550-common.git common
         cp -f clang.sh ${GITHUB_WORKSPACE}/common
         cd ${GITHUB_WORKSPACE}/common
+        curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s dev
         chmod +x clang.sh
         ./clang.sh
       continue-on-error: true        
